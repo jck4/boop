@@ -1,6 +1,6 @@
 {
   "name": "Boop",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "manifest_version": 2,
   "description": "This is a browser extension for setting up end-to-end encrypted messages for online chat applications",
   "icons": {
@@ -16,7 +16,6 @@
     "https://twitter.com/*"
   ],
 
-
   "content_scripts": [
     {
       "matches": [
@@ -31,5 +30,21 @@
     "default_icon": "icons/icon19.png",
     "default_title": "Boop Encrypted",
     "default_popup": "src/popup/popup.html"
+  },
+  
+  "background":
+  {
+    "scripts": ["src/background.js"],
+    "persistent": false
+  },
+  "commands": {
+
+    "_execute_browser_action": {
+      "suggested_key": {
+        "mac": "MacCtrl+Shift+F",
+        "default": "Ctrl+Shift+F"
+      }
+    }
   }
+
 }
